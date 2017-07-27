@@ -3,17 +3,27 @@ import React from "react";
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
+  ComponentPlayground,
   Deck,
   Heading,
   ListItem,
+  Image,
   List,
   Quote,
   Slide,
+  Fill,
+  Fit,
   Text,
-  Appear,
-  Segment,
+  Table,
+  TableHeaderItem,
+  TableRow,
+  TableItem,
+  Layout,
+
+
 } from "spectacle";
 
 // Import image preloader util
@@ -30,11 +40,18 @@ require("spectacle/lib/themes/default/index.css");
 const images = {
   city: require("../assets/city.jpg"),
   kat: require("../assets/kat.png"),
-  logo: require("../assets/formidable-logo.svg"),
+  logo: require("../assets/logoandtag.jpg"),
   markdown: require("../assets/markdown.png"),
   bawdoghouse: require("../assets/Drawing-Dog-House-Coloring-Pages.jpg"),
-  bdp: require("../assets/black-diamond-plate.jpg"),
+  bdp: require("../assets/black-diamond-plate-dark.jpg"),
+  josie: require("../assets/kat.png"),
+  keveren: require("../assets/keveren.png"),
+  scott: require("../assets/scott.jpg"),
+  doug: require("../assets/doug.jpg"),
+
 };
+
+
 
 preloader(images);
 
@@ -43,10 +60,11 @@ const theme = createTheme({
   secondary: "#1F2022",
   tertiary: "#03A9FC",
   quartenary: "#CECECE",
-  option1: "red",
+  option1: "orange",
 }, {
-  primary: "Montserrat",
-  secondary: "Helvetica"
+  primary: { name: "Bangers", googleFont: true },
+  secondary: "Helvetica",
+  option1: { name: "Bangers", googleFont: true }
 });
 
 export default class Presentation extends React.Component {
@@ -61,6 +79,9 @@ export default class Presentation extends React.Component {
             Taking care of the thought for a thoughtful man!
           </Text>
         </Slide>
+        <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
+        <Image src={images.logo}  height="300px"/>
+        </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
           <Heading size={2} textColor="option1">Why Doghouse Dodger?</Heading>
           <Heading size={5} textColor="primary">Do these questions sound familiar?</Heading>
@@ -71,7 +92,7 @@ export default class Presentation extends React.Component {
             <Appear><Text size={6} textColor="primary">"You don't remember when our first date was?"</Text></Appear>
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
-          <Heading size={3} textColor="option1">What can Doghouse Dodger do?</Heading>
+          <Heading size={3} textFont="primary" textColor="option1">What can Doghouse Dodger do?</Heading>
             <Appear><Text size={6} textColor="primary">Keep information secure with login</Text></Appear>
             <Appear><Text size={6} textColor="primary">Create multiple relationships</Text></Appear>
             <Appear><Text size={6} textColor="primary">Record all personal information</Text></Appear>
@@ -80,27 +101,63 @@ export default class Presentation extends React.Component {
             <Appear><Text size={6} textColor="primary">Random Date Generator</Text></Appear>
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
-          <Heading size={3} textColor="option1">Technologies used</Heading>
-            <Appear><Text size={6} textColor="primary">Tech 1</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Tech 2</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Tech 3</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Tech 4</Text></Appear>
+          <Heading size={3} textFont="primary" textColor="option1">Future plans for Doghouse Dodger?</Heading>
+            <Appear><Text size={6} textColor="primary">Chat group</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Text reminders a week out from important dates</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Text reminders on important dates</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Intigrate important dates with Google Calendar</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Emergency button (Auto order flowers, chocolates, etc)</Text></Appear>
+            <Appear><Text size={6} textColor="primary"></Text></Appear>
+        </Slide>
+        <Slide  transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
+          <Heading size={3} textFont="primary"  textColor="option1">Technologies used</Heading>
+            <Appear><Text size={6} textColor="primary">React</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Redux</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Ruby/Rails</Text></Appear>
+            <Appear><Text size={6} textColor="primary"></Text></Appear>
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
-          <Heading size={3} textColor="option1">Obstacles Overcomed</Heading>
-            <Appear><Text size={6} textColor="primary">Obstacle 1</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Obstacle 2</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Obstacle 3</Text></Appear>
-            <Appear><Text size={6} textColor="primary">Obstacle 4</Text></Appear>
+          <Heading size={3} textFont="primary" textColor="option1">Challenges</Heading>
+            <Appear><Text size={6} textColor="primary">Routing</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Carrying relationship Ids through different components</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Breaking code when different team members merge</Text></Appear>
+            <Appear><Text size={6} textColor="primary">Sticking to Agile/Scrum environment</Text></Appear>
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="primary" textColor="tertiary">
-          <Heading size={6} textColor="primary" caps>Design Team</Heading>
-          <Text size={6} textColor="primary">Team Photo</Text>
+        <Heading margin="20px" size={1} fit textColor="option1">
+          The Doghouse Dodger Team
+        </Heading>
+             <Layout align="flex-start center">
+               <Fill>
+                 <Table margin="20px">
+                   <TableRow>
+                     <TableItem>
+                       <Image src={images.doug} margin="80px 20px 0px 0px" height="200px"/>
+                     </TableItem>
+                     <TableItem>
+                       <Image src={images.josie} margin="80px 20px 0px 20px" height="200px"/>
+                     </TableItem>
+                     <TableItem>
+                       <Image src={images.keveren} margin="80px 20px 0px 20px" height="200px"/>
+                     </TableItem>
+                     <TableItem>
+                       <Image src={images.scott} margin="80px 20px 0px 20px" height="200px"/>
+                     </TableItem>
+                   </TableRow>
+                   <TableRow>
+                     <TableItem>Doug</TableItem>
+                     <TableItem>Josie</TableItem>
+                     <TableItem>Keveren</TableItem>
+                     <TableItem>Scott</TableItem>
+                   </TableRow>
+                 </Table>
+               </Fill>
+             </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote textColor="primary">Happy Wife,</Quote><Quote textColor="option1"> Happy Life</Quote>
+            <Cite>Author- The Doghouse Dodger</Cite>
           </BlockQuote>
         </Slide>
       </Deck>
