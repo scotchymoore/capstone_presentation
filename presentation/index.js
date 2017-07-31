@@ -114,11 +114,10 @@ export default class Presentation extends React.Component {
           <div style={ styles.bg }>
             <Heading size={3} textFont="primary" textColor="option1">Future plans for Doghouse Dodger?</Heading>
               <Appear><Text size={6} textColor="primary">Chat group</Text></Appear>
-              <Appear><Text size={6} textColor="primary">Text reminders a week out from important dates</Text></Appear>
-              <Appear><Text size={6} textColor="primary">Text reminders on important dates</Text></Appear>
+              <Appear><Text size={6} textColor="primary">Text reminders a week out and day of important dates</Text></Appear>
               <Appear><Text size={6} textColor="primary">Intigrate important dates with Google Calendar</Text></Appear>
               <Appear><Text size={6} textColor="primary">Emergency button (Auto order flowers, chocolates, etc)</Text></Appear>
-              <Appear><Text size={6} textColor="primary"></Text></Appear>
+              <Appear><Text size={6} textColor="primary">Gift tracker</Text></Appear>
           </div>
         </Slide>
         <Slide  transition={["slide"]} bgImage={images.bdp} bgColor="tertiary">
