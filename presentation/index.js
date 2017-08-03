@@ -71,8 +71,8 @@ const images = {
   scott: require("../assets/scott2.jpg"),
   doug: require("../assets/doug2.jpg"),
   select: require("../assets/relationship_selector.png"),
-  relationship_info: require("../assets/relationship_info.png"),
-  food: require("../assets/food.png"),
+  relationship_info: require("../assets/relinfo.png"),
+  food: require("../assets/food2.png"),
   bucketlist: require("../assets/bucketlist.png"),
   date_activity: require("../assets/date_activity.png"),
   random_date: require("../assets/random_date.png"),
@@ -104,7 +104,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
           <div style={ styles.bg }>
-            <Heading size={2} textColor="option1">Why Doghouse Dodger?</Heading>
+            <Heading size={2} textColor="option1" center>Why Doghouse Dodger?</Heading>
             <Heading size={4} textColor="tertiary">Do these questions sound familiar?</Heading>
             <Text style={styles.pt}>Do you know what today is?</Text>
             <Text style={styles.pt}>What do you want to eat?</Text>
@@ -115,33 +115,16 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
           <div style={ styles.bg }>
-            <Heading size={2} textFont="primary" textColor="option1">What can Doghouse Dodger do?</Heading>
-            <Text style={styles.pt2} >Tracks multiple relationships (Wife, Mom, etc.)</Text>
-            <Text style={styles.pt2}>Record all personal information</Text>
-            <Text style={styles.pt2}>Record restaurants, date activities, goals</Text>
-            <Text style={styles.pt2}>Links to all restaurants, date activities, goals</Text>
-            <Text style={styles.pt2}>Random Date Generator</Text>
+            <Heading size={1} textFont="primary" textColor="option1">What can Doghouse Dodger do?</Heading>
           </div>
         </Slide>
         <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
-          <Heading size={2} textColor="option1">Select a Relationship</Heading>
-          <Image src={images.select}  height="500px"/>
-        </Slide>
-        <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
-          <Heading size={2} textColor="option1">Relationship Info</Heading>
+          <Heading size={4} textColor="option1">Personal Information at a Glance</Heading>
           <Image src={images.relationship_info}  height="500px"/>
         </Slide>
         <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
-          <Heading size={2} textColor="option1">Food/Restaurant</Heading>
-          <Image src={images.food}  height="500px"/>
-        </Slide>
-        <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
-          <Heading size={2} textColor="option1">Date Activities</Heading>
-          <Image src={images.date_activity}  height="500px"/>
-        </Slide>
-          <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
-          <Heading size={2} textColor="option1">Random Date Selector</Heading>
-        <Image src={images.random_date}  height="500px"/>
+          <Heading size={4} textColor="option1">Track and sort restaurants, date activities, goals</Heading>
+          <Image src={images.food}  height="400px"/>
         </Slide>
         <Slide  transition={["slide"]} bgImage={images.bdp} bgColor="tertiary">
           <div style={ styles.bg }>
@@ -157,10 +140,9 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgImage={images.bdp} bgColor="tertiary">
           <div style={ styles.bg }>
-            <Heading size={2} textFont="primary" textColor="option1">Challenges</Heading>
+            <Heading size={1} textFont="primary" textColor="option1">Challenges</Heading>
               <Text style={styles.pt}> Race Conditions</Text>
               <Text style={styles.pt}> Carrying relationship Ids through different components</Text>
-              <Text style={styles.pt}> Breaking code when different team members merge</Text>
               <Text style={styles.pt}> Cross Browser/Platform Compatibility</Text>
           </div>
         </Slide>
@@ -215,3 +197,19 @@ export default class Presentation extends React.Component {
     );
   }
 }
+
+
+
+
+
+// <Text style={styles.pt2} >Tracks multiple relationships (Wife, Mom, etc.)</Text>
+// <Text style={styles.pt2}>Personal information at a glance</Text>
+// <Text style={styles.pt2}>Track and sort restaurants, date activities, goals</Text>
+// <Text style={styles.pt2}>One click info search on listed entries</Text>
+// <Text style={styles.pt2}>Random Date Generator</Text>
+
+
+// <Slide transition={["zoom"]} bgImage={images.bdp} bgColor="primary">
+//   <Heading size={2} textColor="option1">Date Activities</Heading>
+//   <Image src={images.date_activity}  height="500px"/>
+// </Slide>
